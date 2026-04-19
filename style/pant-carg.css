@@ -1,0 +1,32 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+ @font-face {
+    font-family: 'SpaceX';
+    src: url('../spacex/fonts/SpaceX.ttf');
+}
+h1 {
+    font-family: 'SpaceX', sans-serif;
+    color: #fff;
+    font-size: 2rem;
+
+}
+
+
+
+
+
+
+
+
+.pantalla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(#122328,#201e36,#26152a);
+}   
