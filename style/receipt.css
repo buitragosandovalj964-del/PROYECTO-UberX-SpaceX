@@ -1,9 +1,4 @@
-/* =========================================
-   RECEIPT.CSS — Factura / Recibo
-   Paleta unificada con apps.css
-   ========================================= */
 
-/* ── Layout ── */
 .receipt-screen {
     display: flex;
     flex-direction: column;
@@ -12,9 +7,7 @@
     overflow: hidden;
 }
 
-/* =========================================
-   HEADER
-   ========================================= */
+
 .receipt-header {
     display: flex;
     align-items: center;
@@ -44,15 +37,13 @@
 .receipt-title {
     font-size: 1rem;
     font-weight: 600;
-    color: #e8a87c; /* acento cálido igual al mock */
+    color: #e8a87c; 
     letter-spacing: 0.02em;
 }
 
-.header-spacer { width: 40px; } /* equilibra el back-btn */
+.header-spacer { width: 40px; }
 
-/* =========================================
-   SCROLL AREA
-   ========================================= */
+
 .receipt-scroll {
     flex: 1;
     overflow-y: auto;
@@ -61,9 +52,7 @@
 }
 .receipt-scroll::-webkit-scrollbar { display: none; }
 
-/* =========================================
-   CARD PRINCIPAL
-   ========================================= */
+
 .receipt-card {
     background: rgba(255,255,255,0.92);
     border-radius: 24px;
@@ -72,7 +61,7 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
-/* ── Importe ── */
+
 .receipt-amount {
     display: flex;
     flex-direction: column;
@@ -99,14 +88,14 @@
     color: #aaa;
 }
 
-/* ── Divisor ── */
+
 .divider {
     height: 1px;
     background: rgba(0,0,0,0.08);
     margin: 12px 0;
 }
 
-/* ── Título de sección ── */
+
 .section-title {
     font-size: 0.78rem;
     font-weight: 700;
@@ -117,7 +106,7 @@
     margin-top: 4px;
 }
 
-/* ── Fila de vuelo ── */
+
 .flight-row {
     display: flex;
     align-items: center;
@@ -199,7 +188,6 @@
     font-size: 0.78rem;
 }
 
-/* Total con acento */
 .detail-row--total .detail-label {
     font-weight: 700;
     color: #e8a87c;
@@ -211,7 +199,6 @@
     font-size: 0.95rem;
 }
 
-/* Badge categoría */
 .category-badge {
     background: #dbeafe;
     color: #2563eb;
@@ -221,9 +208,7 @@
     border-radius: 50px;
 }
 
-/* =========================================
-   FOOTER ACCIONES (sticky)
-   ========================================= */
+
 .receipt-footer {
     position: sticky;
     bottom: 0;
@@ -269,9 +254,6 @@
     color: #e8a87c;
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
 @media (max-width: 480px) {
     .receipt-card { padding: 22px 18px; }
     .amount-value { font-size: 2rem; }

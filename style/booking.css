@@ -1,6 +1,4 @@
-/* =========================================
-   BOOKING.CSS — Confirm Screen
-   ========================================= */
+
 
 .ctrl {
     position: absolute;
@@ -9,7 +7,7 @@
     width: 0; height: 0; margin: 0;
 }
 
-/* ── Layout ── */
+
 .booking {
     display: flex;
     flex-direction: column;
@@ -18,9 +16,6 @@
     background: #000;
 }
 
-/* =========================================
-   MAPA — solo imagen de fondo, sin chips ni SVG
-   ========================================= */
 .map-view {
     position: relative;
     height: 45vh;
@@ -51,9 +46,7 @@
 }
 .back-btn:hover { background: rgba(255,255,255,0.22); }
 
-/* =========================================
-   BOTTOM SHEET
-   ========================================= */
+
 .bottom-sheet {
     position: relative;
     z-index: 10;
@@ -70,7 +63,7 @@
     overflow: hidden;
 }
 
-/* Handle */
+
 .drag {
     display: block;
     width: 40px; height: 4px;
@@ -81,7 +74,7 @@
     flex-shrink: 0;
 }
 
-/* Aviso */
+
 .notice {
     text-align: center;
     font-size: 0.72rem;
@@ -92,9 +85,7 @@
     flex-shrink: 0;
 }
 
-/* =========================================
-   CONTRAÍDO — Nave featured (solo Crew Dragon)
-   ========================================= */
+
 .sheet-collapsed { display: block; }
 .sheet-expanded  { display: none; }
 
@@ -158,9 +149,7 @@
     margin-bottom: 2px;
 }
 
-/* =========================================
-   EXPANDIDO — Lista de naves
-   ========================================= */
+
 .ship-list {
     list-style: none;
     overflow-y: auto;
@@ -198,9 +187,7 @@
 .ship .info h3 { font-size: 0.93rem; font-weight: 600; color: #fff; margin-bottom: 2px; }
 .ship .info p  { font-size: 0.72rem; color: #888; }
 
-/* =========================================
-   MONEDA AZUL
-   ========================================= */
+
 .price {
     display: flex;
     align-items: center;
@@ -237,9 +224,7 @@
     transform: rotate(-25deg);
 }
 
-/* =========================================
-   WALLET
-   ========================================= */
+
 .wallet {
     display: flex;
     align-items: center;
@@ -258,9 +243,7 @@
 .wallet-label { flex: 1; font-size: 0.9rem; font-weight: 500; }
 .wallet-arrow { opacity: 0.4; font-size: 1.1rem; }
 
-/* =========================================
-   SWIPE TO CONFIRM
-   ========================================= */
+
 .swipe {
     display: flex;
     align-items: center;
@@ -301,9 +284,6 @@
     pointer-events: none;
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
 @media (max-width: 480px) {
     .map-view { height: 40vh; }
 }

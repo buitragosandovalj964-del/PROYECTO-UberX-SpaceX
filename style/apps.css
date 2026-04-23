@@ -1,10 +1,7 @@
-/* =========================================
-   ESTILOS GENERALES Y VARIABLES
-   ========================================= */
+
 
 :root {
-    /* Gradiente para mezclar con la imagen de fondo DENTRO DEL PANEL */
-    /* Ajustado para ser más oscuro y profundo como en tu referencia */
+    
     --bg-contained-gradient: linear-gradient(160deg, rgba(18, 18, 25, 0.9) 0%, rgba(32, 30, 54, 0.95) 50%, rgba(38, 21, 42, 0.98) 100%);
     
     --white: #ffffff;
@@ -20,7 +17,7 @@
 }
 
 body {
-    background: #000; /* Fondo exterior */
+    background: #000; 
     color: var(--white);
     min-height: 100vh;
     display: flex;
@@ -28,14 +25,12 @@ body {
     align-items: center;
 }
 
-/* =========================================
-   EL CONTENEDOR (MARCO DEL TELÉFONO)
-   ========================================= */
+
 
 .app-container {
     background:  linear-gradient(160deg, #122328 20%, #201e36 40%, #26152a 100%);
     width: 100%; 
-    max-width: 440px; /* Tamaño móvil estándar */
+    max-width: 440px; 
     min-height: 100vh; 
     position: relative; 
     overflow-x: hidden;
@@ -50,25 +45,23 @@ body {
         height: 850px;
         border: 12px solid #1a1a1a;
         border-radius: 45px;
-        overflow: hidden; /* ← AGREGA ESTO */
-        overflow-y: auto; /* ← permite scroll interno sin mostrar scrollbar */
-        scrollbar-width: none; /* ← oculta scrollbar en Firefox */
+        overflow: hidden; 
+        overflow-y: auto; 
+        scrollbar-width: none; 
     }
     
     .app-container::-webkit-scrollbar {
-        display: none; /* ← oculta scrollbar en Chrome/Edge */
+        display: none; 
     }
 }
 
-/* =========================================
-   SECCIÓN DEL MAPA (HEADER)
-   ========================================= */
+
 
 .map-view-v2 {
     flex: 1;
     position: relative;
     padding: 20px;
-    background: #000; /* Aseguramos negro puro arriba */
+    background: #000; 
     min-height: 350px;
     z-index: 1;
 }
@@ -101,10 +94,6 @@ body {
     opacity: 0.5;
 }
 
-/* =========================================
-   BOTTOM SHEET (EL PANEL DE NAVES)
-   ========================================= */
-
 .bottom-sheet-v2 {
     padding: 15px 20px 40px;
     border-radius: 40px 40px 0 0;
@@ -115,9 +104,8 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* FONDO ESPACIAL CONFINADO */
+
 .bottom-sheet-v2.space-contained {
-    /* IMPORTANTE: Ajusté la ruta para que coincida con tu VS Code */
     background-image: 
         var(--bg-contained-gradient), 
         url('../archive/espacio-tierra-marte.png'); 
@@ -133,9 +121,6 @@ body {
     margin: 0 auto 15px; border-radius: 2px;
 }
 
-/* =========================================
-   CARTAS DE NAVES
-   ========================================= */
 
 .ship-list-v2 { list-style: none; }
 
@@ -166,9 +151,6 @@ body {
 .ship-info-v2 h3 { font-size: 1.05rem; margin-bottom: 2px; }
 .ship-info-v2 p { font-size: 0.75rem; color: var(--text-1); }
 
-/* =========================================
-   TOKEN / MONEDA (EFECTO ESFERA)
-   ========================================= */
 
 .ship-price-v2 {
     margin-left: auto;
@@ -178,7 +160,6 @@ body {
 
 .space-token-v2 {
     width: 20px; height: 20px;
-    /* Gradiente radial para efecto 3D */
     background: radial-gradient(circle at 35% 35%, #7eb2ff 0%, #3a86ff 50%, #0046ad 100%);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(58, 134, 255, 0.6);
@@ -193,9 +174,6 @@ body {
     transform: rotate(-30deg);
 }
 
-/* =========================================
-   ACCIONES (SWIPE)
-   ========================================= */
 
 .swipe-container-v2 {
     margin-top: 20px;

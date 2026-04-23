@@ -1,6 +1,6 @@
-/* --- Tokens de Color de la Interfaz --- */
+
 :root {
-    /* El "azulito oscurito" exacto: un degradado de azul noche a negro profundo */
+    
     --bg-dark-blue: linear-gradient(180deg, #1C1B21 0%, #0C0B0E 100%);
     
     --fz-lg: 1.25rem;
@@ -11,7 +11,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Base --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +35,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- Elementos de Vidrio (Glassmorphism) --- */
+
 .u-glass {
     background: var(--glass-white);
     backdrop-filter: blur(15px);
@@ -43,7 +43,7 @@ body {
     border: 1px solid var(--glass-border);
 }
 
-/* --- Header --- */
+
 .app-header {
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* --- Buscador --- */
+
 .search-section {
     margin-bottom: var(--space-5);
 }
@@ -97,7 +97,7 @@ body {
     opacity: 0.4;
 }
 
-/* --- Lista de Métodos --- */
+
 .payment-list {
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* --- Badges y Botones --- */
+
 .badge-default {
     background: var(--badge-yellow);
     color: #000;
@@ -174,7 +174,7 @@ body {
     color: var(--danger-red);
 }
 
-/* --- Footer --- */
+
 .footer-cta {
     padding: 20px 0;
 }

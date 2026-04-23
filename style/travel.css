@@ -1,8 +1,4 @@
-/* =========================================
-   TRAVEL.CSS — Versión Final Corregida
-   ========================================= */
 
-/* Ocultar todos los inputs de control */
 .ctrl {
     position: absolute;
     opacity: 0;
@@ -12,21 +8,18 @@
     margin: 0;
 }
 
-/* ── Layout ── */
+
 .travel {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #000; /* Fondo negro base para evitar huecos blancos */
-    overflow: hidden;
+    background-color: #000; 
 }
 
-/* =========================================
-   MAPA (ZONA SUPERIOR)
-   ========================================= */
+
 .map-view {
     position: relative;
-    height: 45vh; /* Ajustado para que se vean bien los planetas como en la img 2 */
+    height: 45vh; 
     flex-shrink: 0;
     overflow: hidden;
     background-image: url('../archive/espacio-tierra-marte.png');
@@ -56,33 +49,31 @@
     line-height: 1;
 }
 
-/* =========================================
-   BOTTOM SHEET (PANEL DE NAVES)
-   ========================================= */
+
 .bottom-sheet {
     position: relative;
     z-index: 10;
     border-radius: 32px 32px 0 0;
     padding: 0 16px 20px;
     
-    /* GRADIENTE TRANSLÚCIDO (Como en la Imagen 2) */
+    
     background: linear-gradient(
         180deg,
         rgba(28, 22, 48, 0.85) 0%,
         rgba(15, 12, 28, 0.95) 100%
     );
-    backdrop-filter: blur(25px); /* Efecto cristal más fuerte */
+    backdrop-filter: blur(25px); 
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    /* AJUSTE DE POSICIÓN Y CRECIMIENTO */
-    flex-grow: 1; /* Ahora sí ocupa el espacio hasta abajo */
-    margin-top: -30px; /* Sutil solapamiento con el mapa */
+    
+    flex-grow: 1; 
+    margin-top: -30px; 
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-/* Handle / Drag */
+
 .drag {
     display: block;
     width: 40px;
@@ -92,7 +83,7 @@
     margin: 12px auto 8px;
 }
 
-/* Aviso */
+
 .notice {
     text-align: center;
     font-size: 0.7rem;
@@ -101,13 +92,11 @@
     letter-spacing: 0.3px;
 }
 
-/* =========================================
-   LISTA DE NAVES (CON SCROLL INTERNO)
-   ========================================= */
+
 .ship-list { 
     list-style: none;
     flex: 1;
-    overflow-y: auto; /* Permite scroll si hay muchas naves */
+    overflow-y: auto; 
     scrollbar-width: none;
 }
 .ship-list::-webkit-scrollbar { display: none; }
@@ -122,7 +111,6 @@
     transition: background 0.2s;
 }
 
-/* Nave activa */
 #ship-1:checked ~ main .ship-list li:nth-child(1) .ship,
 #ship-2:checked ~ main .ship-list li:nth-child(2) .ship,
 #ship-3:checked ~ main .ship-list li:nth-child(3) .ship {
@@ -147,7 +135,7 @@
     color: #fff;
 }
 
-/* Moneda Blue Sphere */
+
 .coin {
     width: 18px;
     height: 18px;
@@ -156,9 +144,7 @@
     box-shadow: 0 0 10px rgba(37,99,235,0.5);
 }
 
-/* =========================================
-   WALLET & SWIPE (FIJOS AL FINAL)
-   ========================================= */
+
 .wallet {
     display: flex;
     align-items: center;
@@ -199,15 +185,12 @@
     color: rgba(255,255,255,0.6);
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
 @media (max-width: 480px) {
     .map-view { height: 42vh; }
 }
 
 @media (min-width: 1280px) {
     .travel { 
-        height: 100%; /* ← Solo esto, sin border ni border-radius */
+        height: 100%;
     }
 }
