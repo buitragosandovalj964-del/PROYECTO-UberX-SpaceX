@@ -1,0 +1,213 @@
+/* =========================================
+   TRAVEL.CSS — Versión Final Corregida
+   ========================================= */
+
+/* Ocultar todos los inputs de control */
+.ctrl {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+/* ── Layout ── */
+.travel {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000; /* Fondo negro base para evitar huecos blancos */
+    overflow: hidden;
+}
+
+/* =========================================
+   MAPA (ZONA SUPERIOR)
+   ========================================= */
+.map-view {
+    position: relative;
+    height: 45vh; /* Ajustado para que se vean bien los planetas como en la img 2 */
+    flex-shrink: 0;
+    overflow: hidden;
+    background-image: url('../archive/espacio-tierra-marte.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 10;
+    line-height: 1;
+}
+
+/* =========================================
+   BOTTOM SHEET (PANEL DE NAVES)
+   ========================================= */
+.bottom-sheet {
+    position: relative;
+    z-index: 10;
+    border-radius: 32px 32px 0 0;
+    padding: 0 16px 20px;
+    
+    /* GRADIENTE TRANSLÚCIDO (Como en la Imagen 2) */
+    background: linear-gradient(
+        180deg,
+        rgba(28, 22, 48, 0.85) 0%,
+        rgba(15, 12, 28, 0.95) 100%
+    );
+    backdrop-filter: blur(25px); /* Efecto cristal más fuerte */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* AJUSTE DE POSICIÓN Y CRECIMIENTO */
+    flex-grow: 1; /* Ahora sí ocupa el espacio hasta abajo */
+    margin-top: -30px; /* Sutil solapamiento con el mapa */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Handle / Drag */
+.drag {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    margin: 12px auto 8px;
+}
+
+/* Aviso */
+.notice {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #888;
+    padding-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================
+   LISTA DE NAVES (CON SCROLL INTERNO)
+   ========================================= */
+.ship-list { 
+    list-style: none;
+    flex: 1;
+    overflow-y: auto; /* Permite scroll si hay muchas naves */
+    scrollbar-width: none;
+}
+.ship-list::-webkit-scrollbar { display: none; }
+
+.ship {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    transition: background 0.2s;
+}
+
+/* Nave activa */
+#ship-1:checked ~ main .ship-list li:nth-child(1) .ship,
+#ship-2:checked ~ main .ship-list li:nth-child(2) .ship,
+#ship-3:checked ~ main .ship-list li:nth-child(3) .ship {
+    background: rgba(255,255,255,0.08);
+}
+
+.ship img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.ship .info { flex: 1; }
+.ship .info h3 { font-size: 0.95rem; color: #fff; margin-bottom: 2px; }
+.ship .info p { font-size: 0.7rem; color: #aaa; }
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Moneda Blue Sphere */
+.coin {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #7eb3ff 0%, #2563eb 60%, #002d8a 100%);
+    box-shadow: 0 0 10px rgba(37,99,235,0.5);
+}
+
+/* =========================================
+   WALLET & SWIPE (FIJOS AL FINAL)
+   ========================================= */
+.wallet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.wallet-label { flex: 1; font-size: 0.9rem; }
+
+.swipe {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    margin-top: 5px;
+}
+
+.swipe-thumb {
+    position: absolute;
+    left: 6px;
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.swipe-text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 480px) {
+    .map-view { height: 42vh; }
+}
+
+@media (min-width: 1280px) {
+    .travel { 
+        height: 100%; /* ← Solo esto, sin border ni border-radius */
+    }
+}

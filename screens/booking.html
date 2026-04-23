@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - UBERx SpaceX</title>
+    <link rel="stylesheet" href="../style/apps.css">
+    <link rel="stylesheet" href="../style/booking.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <input type="checkbox" id="sheet-toggle" class="ctrl">
+
+        <main class="booking">
+
+            <section class="map-view">
+                <!-- back → travel.html -->
+                <a href="travel.html" class="back-btn">&#8249;</a>
+            </section>
+
+            <section class="bottom-sheet">
+
+                <label for="sheet-toggle" class="drag"></label>
+                <p class="notice">Fares are higher due to space debris</p>
+
+                <div class="sheet-collapsed">
+                    <div class="featured-ship">
+                        <img src="../archive/nave4k.jpg" alt="Crew Dragon" class="featured-ship__img">
+                        <div class="featured-ship__body">
+                            <div class="featured-ship__top">
+                                <h2 class="featured-ship__name">Crew Dragon <span class="featured-ship__icon">↗</span></h2>
+                                <div class="featured-ship__price">48.5 <i class="coin"></i></div>
+                            </div>
+                            <p class="featured-ship__date">Next Launch: 12/03/53, 19:30</p>
+                            <p class="featured-ship__duration">Journey duration: 18 Days, 13 Hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connect Wallet → payment-methods.html -->
+                <a href="payment-methods.html" class="wallet">
+                    <span class="wallet-icon">✦</span>
+                    <span class="wallet-label">Connect Wallet</span>
+                    <span class="wallet-arrow">›</span>
+                </a>
+
+                <!-- ✅ Swipe → receipt.html (confirma el booking) -->
+                <a href="receipt.html" class="swipe">
+                    <span class="swipe-thumb">›</span>
+                    <span class="swipe-text">Swipe To Confirm Your Booking</span>
+                </a>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>

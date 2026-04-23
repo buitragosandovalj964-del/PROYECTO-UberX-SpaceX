@@ -1,0 +1,214 @@
+/* =========================================
+   ESTILOS GENERALES Y VARIABLES
+   ========================================= */
+
+:root {
+    /* Gradiente para mezclar con la imagen de fondo DENTRO DEL PANEL */
+    /* Ajustado para ser más oscuro y profundo como en tu referencia */
+    --bg-contained-gradient: linear-gradient(160deg, rgba(18, 18, 25, 0.9) 0%, rgba(32, 30, 54, 0.95) 50%, rgba(38, 21, 42, 0.98) 100%);
+    
+    --white: #ffffff;
+    --text-1: #a0a0a0;
+    --radius-xl: 24px;
+    --fz-md: 1rem;
+    --fz-sm: 0.85rem;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #000; /* Fondo exterior */
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================================
+   EL CONTENEDOR (MARCO DEL TELÉFONO)
+   ========================================= */
+
+.app-container {
+    background:  linear-gradient(160deg, #122328 20%, #201e36 40%, #26152a 100%);
+    width: 100%; 
+    max-width: 440px; /* Tamaño móvil estándar */
+    min-height: 100vh; 
+    position: relative; 
+    overflow-x: hidden;
+    display: flex; 
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+@media (min-width: 1280px) {
+    .app-container {
+        width: 440px;
+        height: 850px;
+        border: 12px solid #1a1a1a;
+        border-radius: 45px;
+        overflow: hidden; /* ← AGREGA ESTO */
+        overflow-y: auto; /* ← permite scroll interno sin mostrar scrollbar */
+        scrollbar-width: none; /* ← oculta scrollbar en Firefox */
+    }
+    
+    .app-container::-webkit-scrollbar {
+        display: none; /* ← oculta scrollbar en Chrome/Edge */
+    }
+}
+
+/* =========================================
+   SECCIÓN DEL MAPA (HEADER)
+   ========================================= */
+
+.map-view-v2 {
+    flex: 1;
+    position: relative;
+    padding: 20px;
+    background: #000; /* Aseguramos negro puro arriba */
+    min-height: 350px;
+    z-index: 1;
+}
+
+.back-btn-v2 {
+    width: 40px; height: 40px; border-radius: 12px;
+    border: none; color: white; cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.planet {
+    position: absolute; 
+    padding: 8px 16px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: var(--fz-md); 
+    border-radius: 20px;
+    background: rgba(18, 18, 18, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 5;
+}
+
+.planet.earth { top: 60%; left: 15%; }
+.planet.mars { top: 25%; right: 10%; }
+
+.route-arc-v2 {
+    position: absolute; width: 100%; height: 100%;
+    top: 0; left: 0; pointer-events: none;
+    opacity: 0.5;
+}
+
+/* =========================================
+   BOTTOM SHEET (EL PANEL DE NAVES)
+   ========================================= */
+
+.bottom-sheet-v2 {
+    padding: 15px 20px 40px;
+    border-radius: 40px 40px 0 0;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+    /* Efecto de borde superior sutil */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* FONDO ESPACIAL CONFINADO */
+.bottom-sheet-v2.space-contained {
+    /* IMPORTANTE: Ajusté la ruta para que coincida con tu VS Code */
+    background-image: 
+        var(--bg-contained-gradient), 
+        url('../archive/espacio-tierra-marte.png'); 
+    
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.drag-handle-v2 {
+    width: 40px; height: 4px; 
+    background: rgba(255,255,255,0.3);
+    margin: 0 auto 15px; border-radius: 2px;
+}
+
+/* =========================================
+   CARTAS DE NAVES
+   ========================================= */
+
+.ship-list-v2 { list-style: none; }
+
+.ship-card-v2 {
+    display: flex; align-items: center;
+    padding: 15px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.3s ease;
+}
+
+.ship-card-v2.active-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border-bottom: none;
+}
+
+.ship-img-container-v2 {
+    width: 60px; height: 60px;
+    margin-right: 15px;
+}
+
+.ship-img-v2 {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+}
+
+.ship-info-v2 h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.ship-info-v2 p { font-size: 0.75rem; color: var(--text-1); }
+
+/* =========================================
+   TOKEN / MONEDA (EFECTO ESFERA)
+   ========================================= */
+
+.ship-price-v2 {
+    margin-left: auto;
+    font-weight: bold;
+    display: flex; align-items: center; gap: 8px;
+}
+
+.space-token-v2 {
+    width: 20px; height: 20px;
+    /* Gradiente radial para efecto 3D */
+    background: radial-gradient(circle at 35% 35%, #7eb2ff 0%, #3a86ff 50%, #0046ad 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(58, 134, 255, 0.6);
+    position: relative;
+}
+
+.space-token-v2::after {
+    content: ''; position: absolute;
+    top: 3px; left: 4px; width: 5px; height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+/* =========================================
+   ACCIONES (SWIPE)
+   ========================================= */
+
+.swipe-container-v2 {
+    margin-top: 20px;
+    position: relative; width: 100%; height: 64px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px; 
+    display: flex; align-items: center; justify-content: center;
+}
+
+.swipe-arrow-v2 {
+    position: absolute; left: 8px;
+    width: 48px; height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex; align-items: center; justify-content: center;
+}

@@ -1,0 +1,94 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'SpaceX';
+  src: url('../spacex/asses/fonts/SpaceX.ttf') format('truetype');
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.splash__logo-text {
+  font-family: 'SpaceX', sans-serif;
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 8px;
+  display: block;
+  line-height: 1;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.splash {
+  background: linear-gradient(160deg, #122328 20%, #201e36 40%, #26152a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+
+.splash__subtitle {
+  color: var(--text-1);
+  font-size: var(--fz-sm);
+  letter-spacing: var(--ls-sm);
+}
+.splash__skip {
+  opacity: 1;
+  font-size: 0.7rem;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.splash__skip:hover {
+  opacity: 0.3;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
