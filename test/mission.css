@@ -1,0 +1,32 @@
+.history-list {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+.history-item:hover {
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    color: transparent;
+}
+.history-date {
+    font-size: 0.9rem;
+    color: #7eb3ff;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.history-main {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+.history-main img { width: 40px; }
+.history-info h3 { font-size: 1.5rem; }
+.history-info p { font-size: 1rem; color: #e0f002; }
+.history-price {
+    margin-left: auto;
+    color: #4CAF50;
+    font-size: 1rem;
+}
+
+
